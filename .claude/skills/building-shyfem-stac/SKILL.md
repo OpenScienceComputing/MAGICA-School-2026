@@ -1,4 +1,9 @@
-# Project Lessons Learned
+---
+name: building-shyfem-stac
+description: Use when building or debugging STAC Items/Catalogs for SHYFEM UGRID Icechunk stores — covers Icechunk virtual-chunk authorization, xstac quirks with unstructured grids and forecast-encoded time, the STAC storage extension v2.0.0 schema, rustac (async/sync, absolute paths, geoparquet), pystac re-runs, xugrid geometry, and deriving metadata from dataset attributes.
+---
+
+# Building STAC for SHYFEM UGRID Icechunk Stores
 
 Hard-won lessons from building STAC Items for SHYFEM UGRID Icechunk stores.
 
