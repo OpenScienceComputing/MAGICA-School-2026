@@ -10,3 +10,8 @@
 - Run scripts with `conda run -n protocoast-notebook python <script>`.
 - For interactive notebook work — editing cells and inspecting real outputs — connect to the `protocoast-notebook` Jupyter kernel.
 - To just verify a notebook runs top-to-bottom (no interactive kernel needed), execute it to a scratch copy so the tracked file isn't touched: `conda run -n protocoast-notebook jupyter nbconvert --execute --to notebook --output-dir /tmp <notebook>`.
+
+## Working discipline
+
+- **Debug by hypothesis, not by guessing.** When something breaks, read the actual traceback, form a specific hypothesis about the cause, and test that hypothesis before changing code. Don't apply speculative fixes and hope.
+- **Verify before claiming done.** Don't say a script or notebook works until you've actually run it and seen it succeed. Report what you ran and what it produced; if something failed or was skipped, say so.
