@@ -1,6 +1,6 @@
 # Claude Code via AWS Bedrock — Student Setup
 
-How we gave students agentic-coding access to Claude Code during MAGICA School 2026, billed through AWS credits via Bedrock rather than a direct Anthropic API key.
+How we gave students agentic-coding access to Claude Code during MAGICA School 2026, billed through [ESIP](https://www.esipfed.org/)'s AWS credits via Bedrock rather than a direct Anthropic API key (thanks ESIP!)
 
 ## Approach
 
