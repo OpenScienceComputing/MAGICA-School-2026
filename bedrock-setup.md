@@ -36,6 +36,35 @@ claude
 - The IAM keypair was shared across all students (one IAM role/user, same key pasted into every profile). **Rotate or deactivate it once the course ends** — it's a standing shared secret for the duration it's live.
 - The `~/.npm-global` prefix step avoids needing sudo to install `@anthropic-ai/claude-code` globally on a shared JupyterHub image.
 
+## IAM identity used
+
+The shared key belonged to a dedicated IAM **user**, not a role: `bedrock-class` (account `097532040392`). It carried a single inline policy, `BedrockInvokeOnly`, scoped to just:
+
+```json
+{
+  "Effect": "Allow",
+  "Action": [
+    "bedrock:InvokeModel",
+    "bedrock:InvokeModelWithResponseStream",
+    "bedrock:ListFoundationModels"
+  ],
+  "Resource": "*"
+}
+```
+
+No group memberships, no other attached policies — the key could call Bedrock models and nothing else in the account.
+
+## Budget guardrail
+
+An AWS Budget (`BedrockClassLimit`) watched Amazon Bedrock spend and would auto-cut off the class if it ran away:
+
+- **Limit**: $500/month, resets monthly
+- **Trigger**: 100% of actual spend
+- **Action**: automatically attaches a `DenyBedrockAccess` policy directly to the `bedrock-class` user (via a budget action + `BudgetBedrockCutoffRole`), `AUTOMATIC` approval — fires with no manual step
+- **Notification**: emails the budget owner when it fires
+
+Worth recreating an equivalent budget + budget-action pair against whatever IAM identity is used for a future cohort, so a bug or runaway loop can't blow past the limit unnoticed.
+
 ## Alternatives for a future cohort
 
 If per-student cost attribution, rate-limiting, or individual revocation becomes necessary:
