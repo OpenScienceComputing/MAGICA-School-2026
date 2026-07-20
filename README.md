@@ -16,7 +16,9 @@ Bertinoro, Italy (April 20-24, 2026),
 
 
 ## Infrastructure 
-This course uses the [Protocoast JupyterHub](https://protocoast.vm.fedcloud.eu/) with Dask Gateway and S3-compatible storage, with the custom `quay.io/globalcoast/protocoast-notebook:main` environment. 
+This course uses the [Protocoast JupyterHub](https://protocoast.vm.fedcloud.eu/) with Dask Gateway and S3-compatible storage, with the custom `quay.io/globalcoast/protocoast-notebook:main` environment.
+
+Agentic coding is provided via Claude Code, billed through AWS Bedrock. See [bedrock-setup.md](bedrock-setup.md) for how student access was configured.
 
 
 ## Schedule
