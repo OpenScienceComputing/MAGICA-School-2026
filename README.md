@@ -1,5 +1,6 @@
 # Open Science in Practice for Coastal Ocean Data Analysis and Visualization
-Co-organized by [MAGICA](https://magica-project.eu), [CMCC](https://www.cmcc.it/), the [University of Bologna](https://www.unibo.it/en), and [EGI](https://www.egi.eu/).
+Co-organized by [MAGICA](https://magica-project.eu), [CMCC](https://www.cmcc.it/), the [University of Bologna](https://www.unibo.it/en), and [EGI](https://www.egi.eu/).  Also supported by [ESIP](https://www.esipfed.org/), who provided AWS Credits to allow Dask scaling and agentic coding via Bedrock, using Claude Code. 
+
 ## Objectives
 In this intensive, week-long course, students learn Open Science and FAIR principals, working with cloud native approaches and tools for working with multidimensional Earth Science data. Through a mix of lectures and practical labs, student learn how to:
 
